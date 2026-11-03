@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Hasheem Iftikhar</title>
+<meta name="description" content="Muhammad Hasheem Iftikhar, AI researcher. Reliable small language models, multi-agent systems, and human authority in AI-assisted education. Applying to PhD programs.">
+<meta property="og:title" content="Muhammad Hasheem Iftikhar">
+<meta property="og:description" content="AI researcher working on reliable small language models, multi-agent systems, and human authority in AI-assisted education.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f5c55'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23fff' text-anchor='middle'%3EMH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --ink:#1b1f1e; --muted:#5b6461; --faint:#8a928f;
+  --line:#e6e3dc; --accent:#0f5c55; --accent-soft:#e3efec; --accent-ink:#0b4a44; --gold:#9a6b12;
+  --shadow:0 1px 2px rgba(20,30,28,.04),0 8px 24px rgba(20,30,28,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111514; --surface:#171c1b; --ink:#e9eeec; --muted:#a3adaa; --faint:#7a8582;
+    --line:#2a3230; --accent:#6cc2b6; --accent-soft:#1c2f2c; --accent-ink:#8fd6cb; --gold:#e0b75a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111514; --surface:#171c1b; --ink:#e9eeec; --muted:#a3adaa; --faint:#7a8582;
+  --line:#2a3230; --accent:#6cc2b6; --accent-soft:#1c2f2c; --accent-ink:#8fd6cb; --gold:#e0b75a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+.serif{font-family:Newsreader,Georgia,serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* nav */
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+.brand{font-family:Newsreader,Georgia,serif;font-size:19px;font-weight:600;color:var(--ink);white-space:nowrap}
+.brand:hover{text-decoration:none}
+.nav ul{display:flex;gap:18px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav ul a{color:var(--muted);font-size:14px;font-weight:500;white-space:nowrap}
+.nav ul a:hover,.nav ul a.on{color:var(--ink);text-decoration:none}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:999px;width:34px;height:34px;display:grid;place-items:center;cursor:pointer;flex:none}
+.theme:hover{color:var(--ink)}
+
+/* hero */
+.hero{padding:72px 0 48px;display:grid;grid-template-columns:1fr 200px;gap:48px;align-items:center}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--accent-ink);background:var(--accent-soft);padding:6px 12px;border-radius:999px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 25%,transparent)}
+h1{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:clamp(36px,6vw,54px);line-height:1.08;letter-spacing:-.015em;margin:18px 0 14px}
+.lede{font-size:18px;color:var(--muted);max-width:60ch;margin:0 0 22px}
+.lede strong{color:var(--ink);font-weight:600}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:14px;font-weight:500}
+.btn:hover{text-decoration:none;border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.btn.primary:hover{filter:brightness(1.08);color:var(--bg)}
+.btn svg{width:16px;height:16px}
+.portrait{width:200px;height:200px;border-radius:24px;background:linear-gradient(140deg,var(--accent),color-mix(in srgb,var(--accent) 45%,#1b1f1e));display:grid;place-items:center;color:#fff;font-family:Newsreader,Georgia,serif;font-size:72px;box-shadow:var(--shadow)}
+.portrait img{width:100%;height:100%;object-fit:cover;border-radius:24px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:24px}
+.stat{background:var(--surface);padding:18px 20px}
+.stat b{display:block;font-family:Newsreader,Georgia,serif;font-size:30px;font-weight:500;color:var(--accent);line-height:1.1}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* sections */
+section{padding:44px 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+h2{font-family:Newsreader,Georgia,serif;font-weight:500;font-size:30px;margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 26px;font-size:15px}
+.interests{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{font-size:13px;padding:5px 11px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted)}
+.prose p{margin:0 0 14px;max-width:70ch}
+
+/* research cards */
+.cards{display:grid;gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:var(--shadow)}
+.card-top{display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+.card h3{font-family:Newsreader,Georgia,serif;font-size:22px;font-weight:500;margin:0;line-height:1.25}
+.tag{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--gold)}
+.meta{color:var(--muted);font-size:14px;margin:6px 0 12px}
+.card p{margin:0 0 12px}
+.card ul{margin:0 0 4px;padding-left:18px}
+.card li{margin:4px 0}
+.figs{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 6px}
+.fig{border-left:3px solid var(--accent);padding:2px 0 2px 10px;font-size:14px;color:var(--muted)}
+.fig b{display:block;color:var(--ink);font-size:18px;font-family:Newsreader,Georgia,serif;font-weight:600}
+.card .more{font-size:14px;font-weight:500}
+
+/* pubs */
+.pubs{list-style:none;padding:0;margin:0;counter-reset:p}
+.pubs li{position:relative;padding:16px 0 16px 44px;border-bottom:1px dashed var(--line);counter-increment:p}
+.pubs li:last-child{border-bottom:0}
+.pubs li::before{content:counter(p);position:absolute;left:0;top:16px;width:28px;height:28px;border-radius:8px;background:var(--accent-soft);color:var(--accent-ink);display:grid;place-items:center;font-size:13px;font-weight:600}
+.pt{font-family:Newsreader,Georgia,serif;font-size:19px;line-height:1.35;color:var(--ink)}
+.pa{font-size:14px;color:var(--muted);margin:4px 0}
+.pa b{color:var(--ink);font-weight:600}
+.badge{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:6px;margin-right:8px}
+.badge.rev{background:#fdf1d8;color:#7a520a}
+.badge.prep{background:var(--accent-soft);color:var(--accent-ink)}
+:root[data-theme="dark"] .badge.rev{background:#3a2e14;color:#f0cc7c}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .badge.rev{background:#3a2e14;color:#f0cc7c}}
+
+/* timeline */
+.tl{display:grid;gap:4px}
+.row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.when{font-size:13px;color:var(--faint);padding-top:3px;font-variant-numeric:tabular-nums}
+.what h4{margin:0;font-size:16px;font-weight:600}
+.what .org{color:var(--muted);font-size:14px}
+.what p{margin:6px 0 0;font-size:15px;color:var(--muted)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.list{list-style:none;padding:0;margin:0}
+.list li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;justify-content:space-between;gap:12px}
+.list li:last-child{border-bottom:0}
+.list .d{color:var(--faint);font-size:13px;white-space:nowrap}
+.skills dt{font-weight:600;font-size:14px;margin-top:12px}
+.skills dd{margin:4px 0 0;color:var(--muted);font-size:15px}
+
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.contact h2{margin-bottom:4px}
+footer{color:var(--faint);font-size:13px;padding:32px 0 48px}
+
+@media (max-width:760px){
+  .wrap{padding:0 16px}
+  .nav ul{display:none}
+  .hero{grid-template-columns:1fr;padding:40px 0 32px;gap:24px}
+  .portrait{width:112px;height:112px;font-size:42px;border-radius:18px;order:-1}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .row{grid-template-columns:1fr;gap:2px}
+  .two{grid-template-columns:1fr}
+  .card{padding:20px}
+  .list li{flex-direction:column;gap:2px}
+}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">M. Hasheem Iftikhar</a>
+    <ul id="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#honors">Honors</a></li>
+    </ul>
+    <button class="theme" id="theme" aria-label="Toggle dark mode" title="Toggle theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <span class="status"><i></i>Applying to PhD programs</span>
+      <h1>Muhammad Hasheem Iftikhar</h1>
+      <p class="lede">I build AI systems that stay <strong>reliable when resources are small</strong> and stay <strong>accountable to the people they serve</strong>. My work spans multi-agent LLM systems for medicine, human authority in AI-assisted education, and memory for AI course assistants.</p>
+      <div class="links">
+        <a class="btn primary" href="Hasheem_Iftikhar_CV.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 14h6M9 18h4"/></svg>CV</a>
+        <a class="btn" href="mailto:hasheemiftikhar123@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+        <a class="btn" href="https://github.com/mhasheem" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.4c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/muhammad-hasheem-iftikhar/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      </div>
+    </div>
+    <!-- To use a photo: replace "MH" with <img src="photo.jpg" alt="Muhammad Hasheem Iftikhar"> -->
+    <div class="portrait" aria-hidden="true">MH</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>91%</b><span>task success on small local models, up from 10 to 18%</span></div>
+    <div class="stat"><b>161</b><span>instructors and students surveyed across 3 countries</span></div>
+    <div class="stat"><b>6,220</b><span>image Urdu alphabet dataset built from scratch</span></div>
+    <div class="stat"><b>1,000+</b><span>applicants for Stanford Code in Place section leader</span></div>
+  </div>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="prose">
+      <p>I am a final-year Computer Science student at <strong>FAST-NUCES Karachi</strong> (BS, 2022 to 2026), with A and A+ grades across my AI and quantitative coursework and three consecutive Dean's List terms. I am an Associate AI Researcher at <a href="https://www.perceviolabs.com/" target="_blank" rel="noopener">Percevio Labs</a> and a Section Leader for Stanford's Code in Place.</p>
+      <p>My thesis showed that a published multi-agent medical AI system, which succeeds on every task with frontier models, falls to 10 to 18% on the small local models hospitals can actually run privately. I rebuilt its orchestration so open 7B to 8B models reach 91%, fully offline on consumer CPUs. That work is now a collaboration with the system's original authors.</p>
+      <p>I am applying to PhD programs to study how to make AI systems trustworthy under real constraints: limited compute, private data, and humans who must stay in charge of the decisions that matter.</p>
+    </div>
+    <div class="interests">
+      <span class="chip">Small language models</span>
+      <span class="chip">Multi-agent LLM systems</span>
+      <span class="chip">Medical AI</span>
+      <span class="chip">Human-AI interaction</span>
+      <span class="chip">AI in education</span>
+      <span class="chip">Agent memory</span>
+      <span class="chip">Evaluation and benchmarks</span>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research</h2>
+    <p class="sub">Selected projects, most recent first.</p>
+    <div class="cards">
+      <article class="card">
+        <div class="card-top"><h3>Enhancing mAIstro: reliable small models for multi-agent medical AI</h3><span class="tag">Thesis &middot; MICCAI 2027 target</span></div>
+        <div class="meta">Aug 2025 to present &middot; FAST-NUCES, supervised by Ms. Alina Arshad &middot; with the original mAIstro authors <a href="https://scholar.google.com/citations?user=uWQOxUkAAAAJ" target="_blank" rel="noopener">Dr. Michail E. Klontzas</a> and <a href="https://scholar.google.com/citations?user=nkMCS88AAAAJ" target="_blank" rel="noopener">Dr. Eleftherios Tzanis</a></div>
+        <p>Hospitals that cannot send patient data to external APIs need small local models, but mAIstro's perfect task success with frontier LLMs collapsed on them. I designed a Master Router Agent over 13+ sub-agents and an optimization pipeline of context pruning, enforced chain-of-thought, schema-constrained decoding, and agentic RAG over a 10,000+ line tool library.</p>
+        <div class="figs">
+          <div class="fig"><b>10 to 18% &rarr; 91%</b>task success, 4 open models</div>
+          <div class="fig"><b>+81 pts</b>Mistral 7B</div>
+          <div class="fig"><b>+73 pts</b>Llama 3.1 8B</div>
+          <div class="fig"><b>Offline</b>runs on consumer CPUs</div>
+        </div>
+        <a class="more" href="https://drive.google.com/file/d/1wcLWrnw91QlUTFHClfpXfCfMcas6EHG3/view?usp=sharing" target="_blank" rel="noopener">Read the thesis &rarr;</a>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><h3>TRACE: locating authority in AI-assisted coursework</h3><span class="tag">ACM FAccT 2027 &middot; under review</span></div>
+        <div class="meta">Mar 2026 to Oct 2026 &middot; Percevio Labs &middot; with co-authors from Amazon, Duke University, Northwestern Polytechnical University and Harbin Institute of Technology</div>
+        <p>A mixed-methods study of when AI-generated course work should become official. I built TRACE, the course-grounded prototype at the center of the paper (now publicly deployed as Fazah), designed the interview protocol, led student-side data collection with bilingual instruments, and co-developed the Coursework Authorization Model.</p>
+        <div class="figs">
+          <div class="fig"><b>67 + 94</b>instructors and students</div>
+          <div class="fig"><b>3 countries</b>Saudi Arabia, US, Pakistan</div>
+          <div class="fig"><b>43 of 67</b>instructors require review of AI output</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><h3>GovMem: dependency-aware memory for AI course assistants</h3><span class="tag">Ongoing</span></div>
+        <div class="meta">Sep 2026 to present &middot; with <a href="https://scholar.google.com/citations?user=8ZSRk3IAAAAJ" target="_blank" rel="noopener">Muhammad Usama Saleem</a> (PhD, UNC Charlotte) and <a href="https://www.linkedin.com/in/ayman-ali-phd/" target="_blank" rel="noopener">Dr. Ayman Ali</a> (Riyadh College of Technology)</div>
+        <p>When an instructor corrects course content, today's AI tools do not carry the fix to the quizzes, grades and feedback that depend on it. GovMem traces which artifacts depend on each edit, updates only those, and routes uncertain changes to the instructor for approval. I am building CourseCorrect, a benchmark of semester-long course-edit episodes, to evaluate it.</p>
+      </article>
+
+      <article class="card">
+        <div class="card-top"><h3>AI assistive learning for children with ADHD</h3><span class="tag">Team lead</span></div>
+        <div class="meta">Mar 2024 to Sep 2025 &middot; <a href="https://www.linkedin.com/company/the-bridge-of-hopes/" target="_blank" rel="noopener">The Bridge of Hopes</a>, led by Dr. Anam Qureshi</div>
+        <p>Founding AI researcher on an initiative building assistive technology for children with ADHD and special needs, joining before it had funding. Set the research direction on how ADHD traits meet AI capabilities, built a new Urdu alphabet dataset with no public equivalent, and was appointed AI team lead.</p>
+        <div class="figs">
+          <div class="fig"><b>6,220 images</b>39 classes</div>
+          <div class="fig"><b>95.52%</b>CNN accuracy, F1 0.96</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications and manuscripts</h2>
+    <p class="sub">My name in bold.</p>
+    <ol class="pubs">
+      <li>
+        <div class="pt">When AI Work Becomes Official: Locating Authority in AI-Assisted Coursework</div>
+        <div class="pa">M. U. Saleem, W. Naveed, <b>M. H. Iftikhar</b>, M. A. Ijaz, H. Munir</div>
+        <div class="pa"><span class="badge rev">Under review</span>ACM FAccT 2027 &middot; <a href="https://drive.google.com/file/d/1oDcxM0Y7oN5t8dftiW94D08oab9c2Wxw/view?usp=drive_link" target="_blank" rel="noopener">PDF</a></div>
+      </li>
+      <li>
+        <div class="pt">Enhancing mAIstro: Making Small Language Models Reliable in Multi-Agent Medical AI Workflows</div>
+        <div class="pa"><b>M. H. Iftikhar</b>, A. Soban, I. Muhammad, with E. Tzanis and M. E. Klontzas</div>
+        <div class="pa"><span class="badge prep">In preparation</span>Joint submission planned for MICCAI 2027 &middot; <a href="https://drive.google.com/file/d/1wcLWrnw91QlUTFHClfpXfCfMcas6EHG3/view?usp=sharing" target="_blank" rel="noopener">Thesis version</a></div>
+      </li>
+      <li>
+        <div class="pt">GovMem / CourseCorrect: Dependency-Aware Memory for AI Course Assistants <span style="color:var(--faint);font-size:15px">(working title)</span></div>
+        <div class="pa">with M. U. Saleem and Dr. A. Ali</div>
+        <div class="pa"><span class="badge prep">In preparation</span></div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="sub">Research and industry roles.</p>
+    <div class="tl">
+      <div class="row"><div class="when">Jan 2026 to now</div><div class="what"><h4>Associate AI Researcher</h4><div class="org"><a href="https://www.perceviolabs.com/" target="_blank" rel="noopener">Percevio Labs</a> &middot; Remote</div><p>Saudi legal-domain LLM: chose the fine-tuning method (LoRA, QLoRA, full) and evaluation metrics from published research; led research and code review of data-generation and fine-tuning pipelines for budget-constrained deployment.</p></div></div>
+      <div class="row"><div class="when">Jun to Aug 2026</div><div class="what"><h4>Software Engineering Intern</h4><div class="org"><a href="https://www.veripark.com/" target="_blank" rel="noopener">VeriPark</a> &middot; Remote, HQ London</div><p>Enterprise expense-management app (Angular, ASP.NET Core, SQL Server) with role-based, multi-stage approval workflows.</p></div></div>
+      <div class="row"><div class="when">Oct 2025 to Mar 2026</div><div class="what"><h4>AI Engineer (contract)</h4><div class="org"><a href="https://zaytune.ai/" target="_blank" rel="noopener">Zaytune</a> &middot; Remote, Michigan</div><p>Sole engineer on the core LLM backend: multi-model routing between fast and reasoning modes, RAG over uploads, source-linked web search, vision-language models.</p></div></div>
+      <div class="row"><div class="when">Sep 2025 to Jan 2026</div><div class="what"><h4>Associate Cloud Engineer</h4><div class="org"><a href="https://atomiccomputing.com/" target="_blank" rel="noopener">Atomic Computing</a> &middot; Remote, Philadelphia</div><p>Cloud cost-analytics pipeline (AWS CUR, S3, Glue, Metabase) that cut analytics running costs by 70 to 90%. Earned two AWS certifications in three months.</p></div></div>
+      <div class="row"><div class="when">Aug to Nov 2025</div><div class="what"><h4>AI Engineer (contract)</h4><div class="org">US construction firm &middot; Remote</div><p>Object detection on architectural drawings to estimate cost and labour; raised accuracy from 63% to 90% with data-efficient augmentation.</p></div></div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching and service</h2>
+    <p class="sub">Teaching is part of how I learn.</p>
+    <div class="tl">
+      <div class="row"><div class="when">Oct 2026 to now</div><div class="what"><h4>Section Leader, Code in Place</h4><div class="org">Stanford University &middot; Remote</div><p>Selected from 1,000+ applicants worldwide after a simulated teaching session. Lead weekly live sections for international learners and give feedback on other section leaders' teaching. <a href="https://drive.google.com/file/d/13w8oUTEGqBi_vzh-iYbShGSq6T_vwUI-/view?usp=drive_link" target="_blank" rel="noopener">Certificate</a></p></div></div>
+      <div class="row"><div class="when">Oct 2024 to Jun 2025</div><div class="what"><h4>Data Science and ML Co-Lead</h4><div class="org">FAST-NUCES Developer Student Club</div><p>Ran 5 to 6 remote and hybrid events with 400+ attendees, invited national and international speakers, and built beginner DS/ML roadmaps.</p></div></div>
+      <div class="row"><div class="when">2017 to 2018</div><div class="what"><h4>Volunteer Teacher</h4><div class="org">Government school outreach, Karachi</div><p>Taught mathematics and science to underprivileged students and led fundraising for their education. Certificate of Citizenship for Community Service.</p></div></div>
+    </div>
+  </section>
+
+  <section id="honors">
+    <h2>Honors and competitions</h2>
+    <p class="sub">Education, awards and hackathons.</p>
+    <div class="two">
+      <div class="card">
+        <h3 style="font-size:19px;margin-bottom:8px">Education</h3>
+        <ul class="list">
+          <li><span><b>BS Computer Science</b>, FAST-NUCES Karachi. 3x Dean's List. <a href="https://drive.google.com/file/d/1E0wYb2tCS7DnO2fIph6VTFQrNpQRzXWa/view?usp=drive_link" target="_blank" rel="noopener">Transcript</a></span><span class="d">2022 to 2026</span></li>
+          <li><span><b>A Levels</b>, The Lyceum School. A* in Computer Science.</span><span class="d">2019 to 2021</span></li>
+          <li><span><b>O Levels</b>, Head Start School. 6 A*s, 2 As.</span><span class="d">2017 to 2019</span></li>
+        </ul>
+        <h3 style="font-size:19px;margin:20px 0 8px">Certifications</h3>
+        <ul class="list">
+          <li><span><a href="https://drive.google.com/file/d/1OyPGAVHKO9Os18RoDZIWe17CDeP4mcgE/view?usp=drive_link" target="_blank" rel="noopener">AWS Certified Solutions Architect, Associate</a></span></li>
+          <li><span><a href="https://drive.google.com/file/d/1zFhwwayAgVCTlexN5-n0Es7bicpINEfP/view?usp=drive_link" target="_blank" rel="noopener">AWS Certified Cloud Practitioner</a></span></li>
+          <li><span>Google Data Analytics, Coursera</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 style="font-size:19px;margin-bottom:8px">Hackathons</h3>
+        <ul class="list">
+          <li><span><a href="https://drive.google.com/file/d/14XEx8bNlI4aG4KR4YtbOwLM7VxUdqhfb/view?usp=drive_link" target="_blank" rel="noopener"><b>Top 5</b>, AgentX, Astera Software</a></span><span class="d">Feb 2026</span></li>
+          <li><span><a href="https://drive.google.com/file/d/1vP3AV1US92_CAME6HBMr1HQnbc2935IM/view?usp=drive_link" target="_blank" rel="noopener">NASA Space Apps 2025, Advanced Track</a></span><span class="d">Oct 2025</span></li>
+          <li><span><a href="https://drive.google.com/file/d/1MLR_q3g8ZLU33NO9Vtnpk3XPuoliTWcE/view?usp=drive_link" target="_blank" rel="noopener">BAND of Agents (lablab.ai)</a></span><span class="d">Jun 2026</span></li>
+          <li><span><a href="https://drive.google.com/file/d/1gkLq2EY4jpEodgxt2jfwT2rMylkCYLPd/view?usp=drive_link" target="_blank" rel="noopener">Co-Creating with GPT-5 (lablab.ai)</a></span><span class="d">Aug 2025</span></li>
+          <li><span><a href="https://drive.google.com/file/d/1MU25ZkBtmA0ZEif85OLuA8o0tlFO_fvm/view?usp=drive_link" target="_blank" rel="noopener">AI for Connectivity (lablab.ai)</a></span><span class="d">Jan 2025</span></li>
+          <li><span><a href="https://drive.google.com/file/d/12qE9dyUXovuT2PMqOtPBBd7RqdqwMAXa/view?usp=drive_link" target="_blank" rel="noopener">CALICO, UC Berkeley</a></span><span class="d">Fall 2024</span></li>
+          <li><span><a href="https://drive.google.com/file/d/1hQIimBW6O-jVJzxmJ3-vxAvu8Vo2dV-D/view?usp=drive_link" target="_blank" rel="noopener">IBM watsonx GenAI (lablab.ai)</a></span><span class="d">Aug 2024</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:18px">
+      <h3 style="font-size:19px;margin-bottom:4px">Skills</h3>
+      <dl class="skills">
+        <dt>ML and research</dt><dd>PyTorch, TensorFlow/Keras, scikit-learn, OpenCV, FAISS, LoRA/QLoRA, constrained decoding, RAG, vision-language models, LangChain/LangGraph, evaluation design, dataset curation, mixed-methods study design</dd>
+        <dt>Engineering and cloud</dt><dd>Python, C#, TypeScript, SQL, Django, ASP.NET Core, Angular, AWS (EC2, ECS/Fargate, S3, Glue), Docker, Git</dd>
+        <dt>Languages</dt><dd>English (full professional), Urdu (native)</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <div class="contact">
+      <div>
+        <h2>Get in touch</h2>
+        <p class="sub" style="margin:0">I'm happy to talk about PhD positions, research collaborations, or my work.</p>
+      </div>
+      <div class="links">
+        <a class="btn primary" href="mailto:hasheemiftikhar123@gmail.com">hasheemiftikhar123@gmail.com</a>
+        <a class="btn" href="Hasheem_Iftikhar_CV.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr">2026</span> Muhammad Hasheem Iftikhar &middot; Karachi, Pakistan</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{var t=localStorage.getItem('theme'); if(t) root.setAttribute('data-theme',t);}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark'; root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var links=[].slice.call(document.querySelectorAll('#navlinks a'));
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-40% 0px -55% 0px'});
+  links.forEach(function(a){var s=document.querySelector(a.getAttribute('href')); if(s) io.observe(s);});
+})();
+</script>
+</body>
+</html>
