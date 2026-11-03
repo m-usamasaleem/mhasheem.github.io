@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EduMem | Muhammad Hasheem Iftikhar</title>
+  <meta name="description" content="EduMem: lifecycle-aware memory that keeps LLM agents' instructional decisions valid as course knowledge evolves. ACL submission in preparation.">
+  <meta property="og:title" content="EduMem: Maintaining Instructional Decision Validity Across Evolving Course Workflows">
+  <meta property="og:description" content="Lifecycle-aware memory for LLM agents: OriginMem, VersionMem and ReplayMem, evaluated with EduMem-Bench.">
+  <meta name="theme-color" content="#FBFAF7">
+  <link rel="icon" type="image/svg+xml" href="../../research/photo-placeholder.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap-wide">
+      <a class="back" href="../../#research">&larr; Muhammad Hasheem Iftikhar</a>
+      <ul class="toc">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#bench">EduMem-Bench</a></li>
+        <li><a href="#contributions">Contributions</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="p-hero wrap">
+      <span class="venue-pill"><span class="dot"></span>ACL submission · In preparation</span>
+      <h1>EduMem</h1>
+      <p class="tagline">Maintaining Instructional Decision Validity Across Evolving Course Workflows</p>
+      <p class="authors"><span class="me">Muhammad Hasheem Iftikhar</span>, <a href="https://m-usamasaleem.github.io/" target="_blank" rel="noopener">Muhammad Usama Saleem</a>, <a href="https://www.linkedin.com/in/ayman-ali-phd/" target="_blank" rel="noopener">Ayman Ali</a></p>
+      <div class="advisors">
+        <span class="lbl">Advisors</span>
+        <span><b>Dr. Muhammad Usama Saleem</b>, Research Scientist, Amazon</span>
+        <span><b>Dr. Ayman Ali</b>, Assistant Professor, Riyadh College of Technology for Information and Telecommunications</span>
+      </div>
+      <div class="actions">
+        <span class="btn disabled"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>Paper coming soon</span>
+        <a class="btn" href="../../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Homepage</a>
+      </div>
+    </section>
+
+    <section class="wrap-wide">
+      <figure class="teaser">
+        <div class="frame dark"><img src="assets/edumem.svg" alt="EduMem framework: OriginMem, VersionMem and ReplayMem, with approved revisions written back into memory"></div>
+        <figcaption><b>EduMem overview.</b> OriginMem traces artifacts to their evidence and VersionMem keeps their versions and approvals. ReplayMem reconstructs past decisions when knowledge changes and decides to preserve, revise, or ask the instructor. Approved revisions are written back into versioned memory.</figcaption>
+      </figure>
+    </section>
+
+    <section class="p-section wrap">
+      <p class="eyebrow">Abstract</p>
+      <div class="abstract">
+        <p>Large language model agents increasingly support teaching workflows where instructional knowledge evolves through instructor interactions and AI-generated artifacts. Existing agent memory systems address temporal updates, provenance and dependency-aware repair, but their ability to maintain <strong>instructional decision validity</strong> across an entire course lifecycle remains underexplored.</p>
+        <p>We propose <strong>EduMem</strong>, a lifecycle-aware memory framework that connects instructional evidence, evolving artifacts and authorized decisions. <strong>OriginMem</strong> traces instructional artifacts to their supporting evidence, while <strong>VersionMem</strong> maintains their evolving versions, instructor approvals and temporal applicability. Building on both, <strong>ReplayMem</strong> reconstructs historical decision contexts and evaluates their continued validity when instructional knowledge changes, preserving justified decisions, identifying necessary revisions, or requesting instructor clarification when evidence or authorization is insufficient. Approved revisions are incorporated back into versioned memory, enabling continuous maintenance across instructional workflows.</p>
+        <p>We further introduce <strong>EduMem-Bench</strong>, a longitudinal benchmark spanning artifact generation, approval, grading and appeals, to evaluate historical consistency, pedagogical alignment, authorization compliance and selective revision against existing agent memory approaches.</p>
+      </div>
+    </section>
+
+    <section class="p-section wrap" id="problem">
+      <p class="eyebrow">The problem</p>
+      <h2>Available knowledge is not decision-relevant knowledge</h2>
+      <p class="lead">A course is not static. Instructors revise materials, approve generated artifacts and make decisions that affect students, so a teaching agent needs more than a searchable store of course information. It has to know how that knowledge evolved and when it applies.</p>
+      <div class="cards">
+        <div class="card"><span class="num">Uploaded</span><p>An uploaded document may not reflect what was actually taught in class.</p></div>
+        <div class="card"><span class="num">Generated</span><p>An AI-generated assessment does not automatically become an official course artifact.</p></div>
+        <div class="card"><span class="num">Approved</span><p>An approved rubric may govern grading without becoming evidence for unrelated tasks.</p></div>
+      </div>
+      <p style="margin-top:24px">These distinctions compound as artifacts are revised. Approving one version does not authorize later edits, and a change in requirements does not automatically invalidate earlier decisions. EduMem separates three questions that existing memory systems collapse into one:</p>
+      <ol class="steps">
+        <li><h3>Historical justification</h3><p>Was the decision supported by applicable evidence when it was made?</p></li>
+        <li><h3>Current applicability</h3><p>Is it still appropriate for future use after the course has changed?</p></li>
+        <li><h3>Authorization to revise</h3><p>Even when an outcome warrants reconsideration, is the agent allowed to change it, or must the instructor decide?</p></li>
+      </ol>
+    </section>
+
+    <section class="p-section wrap" id="method">
+      <p class="eyebrow">Method</p>
+      <h2>Three complementary memories</h2>
+      <div class="cards">
+        <div class="card"><span class="num">01 · OriginMem</span><h3>Evidence provenance</h3><p>Distinguishes original instructional sources from generated knowledge and records how every artifact relates to the evidence that supports it.</p></div>
+        <div class="card"><span class="num">02 · VersionMem</span><h3>Versions and approvals</h3><p>Represents each artifact's evolving versions alongside the instructor approvals and the period for which each version applies.</p></div>
+        <div class="card"><span class="num">03 · ReplayMem</span><h3>Decision replay</h3><p>Reconstructs the context of past decisions and reasons about consequences: preserve what is still justified, revise what must change, or ask the instructor.</p></div>
+      </div>
+      <p class="quote">Identifying outdated information is different from deciding whether a previously authorized decision is still justified.</p>
+      <p>Prior work distinguishes current from historical memory, propagates validity through provenance, and selectively repairs affected memories. EduMem builds on these ideas but evaluates the downstream decisions made from memory: whether a grade, a quiz or a piece of feedback remains justified under its evidence and authorization conditions.</p>
+    </section>
+
+    <section class="p-section wrap" id="bench">
+      <p class="eyebrow">Evaluation</p>
+      <h2>EduMem-Bench</h2>
+      <p>Conventional memory benchmarks ask whether an agent can answer a question about the past. EduMem-Bench follows a course over time and asks whether the agent keeps its decisions valid as evidence and artifacts change under controlled edits.</p>
+      <div class="cards two">
+        <div class="card"><span class="num">Lifecycle stages</span><p>Artifact generation, instructor approval, grading and appeals.</p></div>
+        <div class="card"><span class="num">What it measures</span><p>Historical consistency, pedagogical alignment, authorization compliance and selective revision.</p></div>
+      </div>
+      <p style="margin-top:20px">Comparisons with temporal memory, provenance-aware repair and authorization-aware approaches will test whether lifecycle-aware decision reasoning helps beyond conventional memory maintenance.</p>
+      <p class="note">This is work in progress. Results will be added here when the paper is released.</p>
+    </section>
+
+    <section class="p-section wrap" id="contributions">
+      <p class="eyebrow">Contributions</p>
+      <h2>What this work adds</h2>
+      <ol class="steps">
+        <li><h3>A new problem formulation</h3><p>Instructional decision validity as a long-horizon agent memory problem, separating historical justification, current applicability and authorization to revise consequential outcomes.</p></li>
+        <li><h3>EduMem</h3><p>A lifecycle-aware memory framework that combines evidence provenance and version-aware authorization with historical decision reconstruction and consequence-aware reasoning.</p></li>
+        <li><h3>EduMem-Bench</h3><p>A longitudinal evaluation framework for decision consistency and selective revision across evolving instructional workflows.</p></li>
+      </ol>
+    </section>
+
+    <section class="p-section wrap-wide">
+      <p class="eyebrow">More research</p>
+      <div class="more">
+        <a href="../trace/"><span class="v">ACM FAccT 2027 · under review</span><span class="t">When AI Work Becomes Official</span></a>
+        <a href="../maistro/"><span class="v">Thesis · MICCAI 2027 planned</span><span class="t">Enhancing mAIstro</span></a>
+        <a href="../adhd/"><span class="v">The Bridge of Hopes</span><span class="t">Assistive AI for Children with ADHD</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap-wide">
+      <span>&copy; 2026 Muhammad Hasheem Iftikhar</span>
+      <a href="mailto:hasheemiftikhar123@gmail.com">hasheemiftikhar123@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>

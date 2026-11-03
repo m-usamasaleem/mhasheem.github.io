@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enhancing mAIstro | Muhammad Hasheem Iftikhar</title>
+  <meta name="description" content="Enhancing mAIstro: making small language models reliable in multi-agent medical AI workflows. Task success rises from 10 to 18% to 91% on open 7B to 24B models, fully offline.">
+  <meta property="og:title" content="Enhancing mAIstro: Small Language Models for Multi-Agent Medical AI">
+  <meta property="og:description" content="From 10 to 18% to 91% task success on small local models, fully offline on consumer CPUs.">
+  <meta property="og:image" content="https://mhasheem.github.io/projects/maistro/assets/enhanced-architecture.jpg">
+  <meta name="theme-color" content="#FBFAF7">
+  <link rel="icon" type="image/svg+xml" href="../../research/photo-placeholder.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/tokens.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap-wide">
+      <a class="back" href="../../#research">&larr; Muhammad Hasheem Iftikhar</a>
+      <ul class="toc">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#system">System</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="p-hero wrap">
+      <span class="venue-pill"><span class="dot"></span>Thesis · Joint MICCAI 2027 submission planned</span>
+      <h1>Enhancing mAIstro</h1>
+      <p class="tagline">Making Small Language Models Reliable in Multi-Agent Medical AI Workflows</p>
+      <p class="authors"><span class="me">Muhammad Hasheem Iftikhar</span>, Ali Soban, ImadUddin Muhammad</p>
+      <p class="affil">FAST-NUCES Karachi · supervised by Ms. Alina Arshad · in collaboration with the original mAIstro authors <a href="https://scholar.google.com/citations?user=nkMCS88AAAAJ" target="_blank" rel="noopener">Dr. Eleftherios Tzanis</a> and <a href="https://scholar.google.com/citations?user=uWQOxUkAAAAJ" target="_blank" rel="noopener">Dr. Michail E. Klontzas</a></p>
+      <div class="actions">
+        <a class="btn primary" href="https://drive.google.com/file/d/1wcLWrnw91QlUTFHClfpXfCfMcas6EHG3/view?usp=sharing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/></svg>Thesis</a>
+        <a class="btn" href="../../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Homepage</a>
+      </div>
+    </section>
+
+    <section class="wrap-wide">
+      <figure class="teaser">
+        <div class="frame dark"><img src="assets/enhanced-architecture.jpg" alt="The enhanced mAIstro two-tier architecture"></div>
+        <figcaption><b>The enhanced mAIstro architecture.</b> A Master Router Agent delegates tasks through structured JSON, and specialized sub-agents run each task through a four-stage optimization pipeline built for small models.</figcaption>
+      </figure>
+      <div class="stats">
+        <div class="stat"><b>10&ndash;18% &rarr; 91%</b><span>task success on small local models</span></div>
+        <div class="stat"><b>+81 pts</b><span>Mistral 7B</span></div>
+        <div class="stat"><b>+73 pts</b><span>Llama 3.1 8B</span></div>
+        <div class="stat"><b>~4&times;</b><span>faster segmentation on a CPU</span></div>
+      </div>
+    </section>
+
+    <section class="p-section wrap">
+      <p class="eyebrow">Abstract</p>
+      <div class="abstract">
+        <p><strong>mAIstro</strong> is an open-source multi-agent framework that runs exploratory data analysis, radiomic feature extraction, medical image segmentation and classification from natural-language requests. It succeeds on every task with frontier models such as GPT-4o and Claude Sonnet 3.7, but cloud-hosted models conflict with data-sovereignty rules (HIPAA/GDPR), cost a lot and add latency. When moved to locally deployable small language models such as Llama 3.1 8B or Mistral 7B, <strong>task success drops to 10 to 18%</strong>, leaving resource-constrained clinics without agentic AI.</p>
+        <p>We close this gap by targeting the root causes of small-model failure in agentic pipelines: a decoupled architecture of 13+ specialized agents; JSON-driven tool execution with schema-constrained configuration in place of fragile code generation; a four-stage optimization pipeline of context pruning, enforced chain-of-thought, constrained decoding with dynamic schema validation and parameter sanitization; agentic RAG with dynamic schema slimming over a 10,000+ line tool library; and CPU-optimized tool defaults. The result is a <strong>fully offline, privacy-preserving pipeline</strong> that reaches 91% task success across four open models on modest hardware.</p>
+      </div>
+    </section>
+
+    <section class="p-section wrap-wide" id="problem">
+      <div class="wrap" style="padding:0">
+        <p class="eyebrow">The problem</p>
+        <h2>Built for frontier models, broken on small ones</h2>
+        <p>The original system routes every request through one Master Agent and eight sub-agents that generate Python code. Small models overflow the context, lose the thread of reasoning, invent tools and write code that does not run.</p>
+      </div>
+      <figure style="margin-top:20px">
+        <div class="frame"><img src="assets/original-architecture.jpg" alt="The original mAIstro architecture" loading="lazy" decoding="async"></div>
+        <figcaption><b>The original mAIstro.</b> A single Master Agent coordinates eight specialized sub-agents for end-to-end medical AI workflows.</figcaption>
+      </figure>
+    </section>
+
+    <section class="p-section wrap-wide" id="method">
+      <div class="wrap" style="padding:0">
+        <p class="eyebrow">Method</p>
+        <h2>Engineering reliability back in</h2>
+      </div>
+      <div class="cards" style="margin-bottom:36px">
+        <div class="card"><span class="num">01 · Decoupled agents</span><p>13+ agents with training and inference split apart, so no agent faces an oversized tool set that invites routing hallucinations.</p></div>
+        <div class="card"><span class="num">02 · JSON tool execution</span><p>Schema-constrained tool calls replace generated Python, removing syntax errors and invented libraries.</p></div>
+        <div class="card"><span class="num">03 · Four-stage pipeline</span><p>Context pruning, enforced reasoning, constrained decoding and parameter sanitization, each fixing one failure mode.</p></div>
+        <div class="card"><span class="num">04 · Agentic RAG</span><p>FAISS retrieval with schema slimming returns only the tool documentation a step needs.</p></div>
+        <div class="card"><span class="num">05 · CPU-aware tools</span><p>CPU-optimized defaults for PyCaret, TotalSegmentator and nnU-Net run without a GPU.</p></div>
+        <div class="card"><span class="num">Fully offline</span><p>No patient data leaves the machine, and no cloud infrastructure is needed.</p></div>
+      </div>
+      <div style="display:grid;gap:40px">
+        <figure>
+          <div class="frame dark"><img src="assets/slm-pipeline.jpg" alt="Four-stage SLM optimization pipeline" loading="lazy" decoding="async"></div>
+          <figcaption><b>The four-stage optimization pipeline.</b> Each stage addresses one failure mode: context overflow, reasoning fragmentation, syntactic hallucination and execution fragility. Invalid tool calls at stage 3 are sent back to stage 2 for self-correction.</figcaption>
+        </figure>
+        <div class="fig-grid">
+          <figure>
+            <div class="frame dark"><img src="assets/decoupled-agents.jpg" alt="Decoupled multi-agent architecture" loading="lazy" decoding="async"></div>
+            <figcaption><b>Decoupled agents.</b> Training and inference live in separate agents, which prevents tool-routing hallucinations.</figcaption>
+          </figure>
+          <figure>
+            <div class="frame dark"><img src="assets/schema-slimming.jpg" alt="Schema slimming and agentic RAG" loading="lazy" decoding="async"></div>
+            <figcaption><b>Schema slimming and agentic RAG.</b> Compact tool schemas plus on-demand documentation keep the context window from saturating.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-section wrap" id="results">
+      <p class="eyebrow">Results</p>
+      <h2>Four open models, one level of reliability</h2>
+      <p>Each model was evaluated on 11 task categories, against the original paper's baseline.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Model</th><th class="num">Params</th><th class="num">Baseline</th><th class="num">Optimized</th><th class="num">Change</th></tr></thead>
+          <tbody>
+            <tr><td>Mistral 7B</td><td class="num">7B</td><td class="num">10%</td><td class="num good">91%</td><td class="num good">+81</td></tr>
+            <tr><td>Llama 3.1 8B</td><td class="num">8B</td><td class="num">18%</td><td class="num good">91%</td><td class="num good">+73</td></tr>
+            <tr><td>Mistral 3.1 24B</td><td class="num">24B</td><td class="num">36%</td><td class="num good">91%</td><td class="num good">+55</td></tr>
+            <tr><td>Llama 4 Scout</td><td class="num">17B</td><td class="num">91%</td><td class="num good">91%</td><td class="num">0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Task success rate in percent; change in percentage points. Every model passes 10 of 11 task categories after optimization.</p>
+    </section>
+
+    <section class="p-section wrap-wide">
+      <div class="fig-grid">
+        <figure>
+          <div class="frame"><img src="assets/success-rates.jpg" alt="Task success rate, baseline versus optimized" loading="lazy" decoding="async"></div>
+          <figcaption><b>Task success, baseline vs. optimized.</b> Every model converges to 91%.</figcaption>
+        </figure>
+        <figure>
+          <div class="frame"><img src="assets/improvement.jpg" alt="Improvement over baseline per model" loading="lazy" decoding="async"></div>
+          <figcaption><b>Improvement over baseline.</b> The smallest models gain the most.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="p-section wrap">
+      <h2>Runs on consumer hardware</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Component</th><th>Unoptimized</th><th>Optimized</th></tr></thead>
+          <tbody>
+            <tr><td>TotalSegmentator</td><td>~45 min / scan</td><td class="good">~10 min / scan</td></tr>
+            <tr><td>PyCaret training</td><td>Unbounded</td><td class="good">Under 10 min, budget-capped</td></tr>
+            <tr><td>PyTorch training</td><td>Variable</td><td class="good">Early stopping at convergence</td></tr>
+            <tr><td>Prompt size</td><td>Baseline</td><td class="good">15&ndash;30% smaller</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">Measured on a standard CPU with no GPU.</p>
+    </section>
+
+    <section class="p-section wrap-wide" id="system">
+      <div class="wrap" style="padding:0">
+        <p class="eyebrow">System</p>
+        <h2>No programming required</h2>
+      </div>
+      <figure style="margin-top:12px">
+        <div class="frame"><img src="assets/interface.jpg" alt="The optimized mAIstro interface during a live run" loading="lazy" decoding="async"></div>
+        <figcaption><b>The optimized mAIstro interface.</b> Users choose the small-model backend and target agent, describe the task in plain language, and watch reasoning traces and execution logs in real time.</figcaption>
+      </figure>
+      <div class="wrap" style="padding:0;margin-top:28px">
+        <p class="note">The original mAIstro authors, Dr. Michail E. Klontzas and Dr. Eleftherios Tzanis, held planning meetings with our team and are independently evaluating this system ahead of a joint MICCAI 2027 submission.</p>
+      </div>
+    </section>
+
+    <section class="p-section wrap-wide">
+      <p class="eyebrow">More research</p>
+      <div class="more">
+        <a href="../edumem/"><span class="v">ACL submission · in preparation</span><span class="t">EduMem</span></a>
+        <a href="../trace/"><span class="v">ACM FAccT 2027 · under review</span><span class="t">When AI Work Becomes Official</span></a>
+        <a href="../adhd/"><span class="v">The Bridge of Hopes</span><span class="t">Assistive AI for Children with ADHD</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="p-footer">
+    <div class="wrap-wide">
+      <span>&copy; 2026 Muhammad Hasheem Iftikhar</span>
+      <a href="mailto:hasheemiftikhar123@gmail.com">hasheemiftikhar123@gmail.com</a>
+    </div>
+  </footer>
+</body>
+</html>
