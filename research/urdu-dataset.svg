@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" font-family="Noto Nastaliq Urdu, Noto Naskh Arabic, Geeza Pro, Arial, sans-serif">
+  <rect width="640" height="360" fill="#071323"/>
+  <g font-size="38" fill="#f1e7e2" text-anchor="middle">
+    <text x="80" y="110">ا</text><text x="160" y="110">ب</text><text x="240" y="110">پ</text><text x="320" y="110">ت</text><text x="400" y="110">ٹ</text><text x="480" y="110">ث</text><text x="560" y="110">ج</text>
+    <text x="80" y="190" opacity=".75">چ</text><text x="160" y="190" opacity=".75">ح</text><text x="240" y="190" opacity=".75">خ</text><text x="320" y="190" opacity=".75">د</text><text x="400" y="190" opacity=".75">ڈ</text><text x="480" y="190" opacity=".75">ذ</text><text x="560" y="190" opacity=".75">ر</text>
+    <text x="80" y="270" opacity=".45">ڑ</text><text x="160" y="270" opacity=".45">ز</text><text x="240" y="270" opacity=".45">ژ</text><text x="320" y="270" opacity=".45">س</text><text x="400" y="270" opacity=".45">ش</text><text x="480" y="270" opacity=".45">ص</text><text x="560" y="270" opacity=".45">ض</text>
+  </g>
+  <g font-family="Instrument Sans, Helvetica, Arial, sans-serif" font-size="13" fill="#8a97a6">
+    <text x="40" y="330">6,220 images · 39 classes</text>
+    <text x="600" y="330" text-anchor="end">CNN 95.52% accuracy · F1 0.96</text>
+  </g>
+</svg>
